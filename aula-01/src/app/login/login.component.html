@@ -1,0 +1,13 @@
+<h2>Tela de Login</h2>
+
+<form>
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" [(ngModel)]="username">
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" name="userPassword" [(ngModel)]="userPassword">
+    </div>
+    <button (click)="doLogin()">Logar</button>
+</form>

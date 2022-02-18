@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'aula-01 UNIVAS';
+
+  counter : number = 0
+  title : any = 'Univas'
+
+  pizza = "Frango com Catupiry"
+
+  age = 10
+
+  itsRaining = false
+
+  student = {
+    name: 'Felipe',
+    lastName: 'Silva',
+    phone: '1234-1234'
+  }
+
+  incrementCounter() {
+    this.counter++
+  }
 }
