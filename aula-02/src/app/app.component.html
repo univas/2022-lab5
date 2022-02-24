@@ -1,0 +1,30 @@
+<h1>Aprendendo sobre data binding</h1>
+
+<h2>Interpolation</h2>
+<p>{{ title }}</p>
+
+<p>1 + 1 = {{ 1 + 1 }}</p>
+<p>2 * 5 = {{ 2 * 5 }}</p>
+
+<h2>Event</h2>
+
+<div>
+  <input (click)="sendMessage()" type="button" 
+    value="Enviar">
+</div>
+<div>
+  <input (click)="changeVariable()" type="button" 
+    value="Alterar">
+</div>
+
+<h2>Two Way Data Binding</h2>
+
+<form>
+  <label>E-mail</label>
+  <input type="email" name="studentEmail" 
+    [(ngModel)]="studentEmail">
+</form>
+
+<h2>Property</h2>
+
+<img [src]="currentImageSource">
