@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { User } from './user';
-import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +10,16 @@ export class AppComponent {
   
   myUser : User
 
+  userDetailText = ''
+
   constructor() {
     this.myUser = {} as User
     this.myUser.name = "Rodrigo"
+    this.myUser.email = "rodrigo@gmail.com"
+    this.myUser.phone = "1234-1234"
+  }
+
+  updateUserDetailText(anyInformation: string) {
+    this.userDetailText = anyInformation
   }
 }

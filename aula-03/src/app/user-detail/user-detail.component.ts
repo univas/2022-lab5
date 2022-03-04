@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../user';
 
 @Component({
@@ -8,11 +8,20 @@ import { User } from '../user';
 })
 export class UserDetailComponent implements OnInit {
 
-  myUser : User = {} as User
+  @Input()
+  userDetail : User = {} as User
+
+  @Output()
+  newEvent = new EventEmitter<string>()
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  dispatchEvent() {
+    const now = (new Date()).getMilliseconds().toString()
+    this.newEvent.emit(now)
   }
 
 }

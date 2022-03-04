@@ -2,4 +2,9 @@
 
 <p>Nome: {{ myUser.name }}</p>
 
-<app-user-detail></app-user-detail>
+<p>Olha ai a pizza: {{ userDetailText }}</p>
+
+<app-user-detail
+    [userDetail]="myUser"
+    (newEvent)="updateUserDetailText($event)">
+</app-user-detail>
