@@ -1,0 +1,21 @@
+<h1>Template Variable</h1>
+
+<div>
+  <label>Nome:</label>
+  <input type="text" #username>
+  <button (click)="sayHello(username.value)">Clique aqui!</button>
+</div>
+
+<div *ngIf="user">
+  <p>Seja bem vindo {{ user }}</p>  
+</div>
+
+<ul>
+  <li *ngFor="let guest of guestList">
+    {{ guest }}
+  </li>
+</ul>
+
+<h2 [appChangeColor]="user">Minha diretiva</h2>
+
+
