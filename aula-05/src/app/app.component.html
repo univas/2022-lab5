@@ -1,0 +1,36 @@
+<h1>Cadastro de Aluno</h1>
+
+<form #myForm="ngForm" (submit)="saveData(myForm)">
+  <div>
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="newStudent.name"
+      name="name" #name="ngModel" required
+      minlength="5">
+  </div>
+
+  <div *ngIf="name.dirty || name.touched">
+    <p *ngIf="name.errors?.['required']">
+      O campo nome é obrigatório
+    </p>
+    <p *ngIf="name.errors?.['minlength']">
+      O campo nome precisa ter no minimo 5 caracteres
+    </p>
+  </div>
+
+  <div>
+    <label>E-mail</label>
+    <input type="email" [(ngModel)]="newStudent.email"
+      name="email" #email="ngModel">
+  </div>
+
+  <input type="submit" value="Salvar" 
+    [disabled]="myForm.invalid">
+</form>
+
+<h2>Alunos cadastrados</h2>
+
+<ul>
+  <li *ngFor="let student of studentList">
+    {{ student.name }} - {{ student.email }}
+  </li>
+</ul>
