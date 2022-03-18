@@ -1,0 +1,36 @@
+<h1>Meu dicionário de Inglês</h1>
+
+<form #myForm="ngForm" (submit)="saveData(myForm)">
+  <div>
+    <label>Palavra:</label>
+    <input type="text" [(ngModel)]="newDictionary.word"
+      name="word" #word="ngModel" required>
+  </div>
+
+  <div *ngIf="word.dirty || word.touched">
+    <p *ngIf="word.errors?.['required']">Campo obrigatório</p>
+  </div>
+
+  <div *ngIf="checkWord()">
+    <p>Já existe essa palavra cadastrada!</p>
+  </div>
+
+  <div>
+    <label>Significado:</label>
+    <input type="text" [(ngModel)]="newDictionary.definition"
+      name="definition" #definition="ngModel" required>
+  </div>
+
+  <div *ngIf="definition.dirty || definition.touched">
+    <p *ngIf="definition.errors?.['required']">Campo obrigatório</p>
+  </div>
+
+  <input type="submit" value="Salvar" 
+          [disabled]="myForm.invalid || checkWord()">
+</form>
+
+<div *ngFor="let dic of dictionaryList">
+  <p>Palavra: {{ dic.word }}</p>
+  <p>Significado: {{ dic.definition }}</p>
+</div>
+
