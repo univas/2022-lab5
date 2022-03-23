@@ -13,8 +13,8 @@
   </div>
   <div>
     <label>Selecione a foto:</label>
-    <input type="file" name="imageUrl" (change)="loadImage($event)"
-      [(ngModel)]="newPost.imageUrl">
+    <input type="file" name="file" (change)="loadImage($event)"
+      (ngModel)="newPost.imageUrl">
   </div>
   <input type="submit" value="Salvar">
 </form>
