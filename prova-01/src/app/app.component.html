@@ -1,0 +1,37 @@
+<h1>Campeonato XYZ</h1>
+
+<form #myForm="ngForm" (submit)="saveData(myForm)">
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="name" 
+      [(ngModel)]="newTeam.name">
+  </div>
+  <div>
+    <label>Pontuação:</label>
+    <input type="text" name="points"
+      [(ngModel)]="newTeam.points">
+  </div>
+  <input type="submit" value="Salvar">
+</form>
+
+<div *ngIf="teamList.length > 0">
+  <h2>Classificação:</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Classificação</th>
+        <th>Time</th>
+        <th>Pontuação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teamList; 
+        let currentIndex = index">
+        <td>{{ currentIndex + 1 }}</td>
+        <td>{{ team.name }}</td>
+        <td>{{ team.points }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
