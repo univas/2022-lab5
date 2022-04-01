@@ -1,0 +1,17 @@
+<h1>Aluno</h1>
+
+<ul>
+  <li>{{ student.name | uppercase }}</li>
+  <li>{{ student.email | lowercase }}</li>
+  <li>{{ student.birthday | date }}</li>
+  <li>{{ student.birthday | date : 'short'}}</li>
+  <li>{{ student.birthday | date : 'full' | uppercase }}</li>
+  <li>{{ student.birthday | date : 'dd-MM' }}</li>
+  <li>{{ student.birthday | date : 'HH:ss' }}</li>
+  <li>{{ student.birthday | date : 'YY' }}</li>
+
+  <li>{{ student.age | currency : 'BRL' }}</li>
+  <li>{{ student.age | currency : 'BRL':'symbol':'3.5-10' }}</li>
+  <li>{{ student.weigth | number : '3.5-10' }}</li>
+  <li>{{ student.registro | cpf }}</li>
+</ul>
