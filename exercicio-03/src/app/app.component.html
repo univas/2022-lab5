@@ -1,0 +1,34 @@
+<h1>Cadastro</h1>
+
+<form #myForm="ngForm" (submit)="saveData(myForm)">
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="name" [(ngModel)]="newCustomer.name">
+  </div>
+  <div>
+    <label>Telefone:</label>
+    <input type="text" name="phone" [(ngModel)]="newCustomer.cellPhone">
+  </div>
+  <div>
+    <label>Adicionar DDD?</label>
+    <input type="checkbox" name="shouldAddDDD" [(ngModel)]="shouldAddDDD">
+  </div>
+  <input type="submit" value="Salvar">
+</form>
+
+<h2>Clientes cadastrados</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customerList">
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.cellPhone | phone : shouldAddDDD }}</td>
+    </tr>
+  </tbody>
+</table>
