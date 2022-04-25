@@ -1,0 +1,15 @@
+<h1>Aprendendo sobre rotas!</h1>
+
+<ul>
+  <li><a [routerLink]="link">Users</a></li>
+  <li><a routerLink="products">Products</a></li>
+</ul>
+
+<div>
+  <button (click)="change()">Link Atual: {{ link }}</button>
+</div>
+
+<router-outlet></router-outlet>
+
+
+<h2>Rodapé</h2>
