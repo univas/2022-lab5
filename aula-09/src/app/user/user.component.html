@@ -15,6 +15,7 @@
 
 <ul>
     <li *ngFor="let user of userList">
-        {{ user.name }}
+        {{ user.name }} 
+        <a [routerLink]="['/users/', user.id]">Detalhe</a>
     </li>
 </ul>
