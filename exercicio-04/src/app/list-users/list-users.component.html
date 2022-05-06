@@ -1,0 +1,14 @@
+<div class="content">
+    <h1>BTwitter!!!</h1>
+    
+    <div class="right">
+        <a routerLink="/feed">Back</a>
+    </div>
+
+    <ul *ngFor="let user of users">
+        <li>{{ user.username }} 
+            <button *ngIf="!isCurrentFollow(user)" (click)="follow(user)">Follow</button>
+            <button *ngIf="isCurrentFollow(user)" (click)="unfollow(user)">Unfollow</button>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,22 @@
+<div class="content">
+    <h1>Welcome to BTwitter!!!</h1>
+    
+    <div class="right">
+        <a routerLink="/welcome">Back</a>
+    </div>
+    <form #myForm="ngForm" (submit)="saveData(myForm)">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username" [(ngModel)]="newUser.username">
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password" [(ngModel)]="newUser.password">
+        </div>
+        <div>
+            <label>Age:</label>
+            <input type="number" name="age" [(ngModel)]="newUser.age">
+        </div>
+        <input type="submit" value="Save">
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div class="content">
+    <h1>BTwitter!!!</h1>
+    
+    <div class="right">
+        <p *ngIf="currentUser && currentUser.username" class="welcome">Welcome {{ currentUser.username }}</p>
+        <a (click)="doLogout()" routerLink="/welcome">Logout</a>
+    </div>
+    
+    <div>
+        <a routerLink="/users">Users to follow</a>
+    </div>
+    
+    <p>What can you share today?</p>
+    <textarea name="content" [(ngModel)]="postContent"></textarea>
+    <div class="right">
+        <button (click)="doPost()">Post</button>
+    </div>
+
+    <div class="clear">
+        <div *ngFor="let post of feed" class="post">
+            <p class="postOwner">User: {{ post.username }}
+                <span>{{ post.date | date : 'shortDate' }}</span>
+            </p>
+            {{ post.content }}
+        </div>
+    </div>
+
+</div>

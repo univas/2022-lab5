@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+
+div.content {
+    width: 80%;
+    margin: 30px auto;
+}
+
+div.content h1 {
+    text-align: center;
+}
+
+div.right {
+    float: right;
+}
+
+
+p.welcome {
+    display: inline;
+    margin-right: 5px;
+}
+
+a {
+    color: blue;
+}
+
+textarea {
+    resize: none;
+    display: block;
+    width: 80%;
+    height: 65px;
+    margin: 5px auto;
+}
+
+div.clear {
+    clear: right;
+}
+
+div.post {
+    display: block;
+    width: 80%;
+    min-height: 65px;
+    margin: 10px auto;
+    border: 1px solid black;
+}
+
+p.postOwner {
+    margin-bottom: 5px;    
+}
+
+p.postOwner span {
+    float: right;
+}
