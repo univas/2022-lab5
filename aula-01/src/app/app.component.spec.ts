@@ -36,4 +36,20 @@ describe('AppComponent', () => {
     app.incrementCounter()
     expect(app.counter).toBe(1)
   })
+
+  it('should decrement the counter instance variable', () =>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.counter = 1
+    app.decrementCounter()
+    expect(app.counter).toBe(0)
+  })
+
+  it('should not decrement the counter instance variable, to avoid negative value', () =>{
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.counter = 0
+    app.decrementCounter()
+    expect(app.counter).toBe(0)
+  })
 });

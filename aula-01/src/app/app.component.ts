@@ -25,4 +25,11 @@ export class AppComponent {
   incrementCounter() {
     this.counter++
   }
+
+  decrementCounter() {
+    this.counter--
+    if (this.counter < 0) {
+      this.counter = 0
+    }
+  }
 }
