@@ -1,5 +1,17 @@
+<h1>Mensagens</h1>
+
+<form #myForm="ngForm" (submit)="save(myForm)">
+  <div>
+    <label>Post:</label>
+    <input type="text" name="post" [(ngModel)]="newPost.post">
+  </div>
+  <input type="submit" value="Salvar">
+</form>
+
+<h2>Mensagens cadastradas:</h2>
 <ul>
   <li *ngFor="let post of postList">
     {{ post.post }}
+    <input type="button" (click)="delete(post.id)" value="Remover">
   </li>
 </ul>
