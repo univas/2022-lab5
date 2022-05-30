@@ -1,0 +1,42 @@
+<h1>Customers</h1>
+
+<form #myForm="ngForm" (submit)="saveData(myForm)">
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="nome" [(ngModel)]="newCustomer.nome">
+  </div>
+  <div>
+    <label>E-mail:</label>
+    <input type="email" name="email" [(ngModel)]="newCustomer.email">
+  </div>
+  <div>
+    <label>CPF:</label>
+    <input type="text" name="cpf" [(ngModel)]="newCustomer.cpf">
+  </div>
+  <input type="submit" value="Salvar">
+</form>
+
+<h2>Customer List</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+      <th>CPF</th>
+      <th>Update</th>
+      <th>Apagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customerList">
+      <td>{{ customer.nome }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.cpf }}</td>
+      <td><input type="button" value="Atualizar" 
+        (click)="updateCustomer(customer)"></td>
+      <td><input type="button" value="Remover" 
+        (click)="deleteCustomer(customer.id)"></td>
+    </tr>
+  </tbody>
+</table>
