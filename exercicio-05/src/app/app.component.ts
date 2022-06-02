@@ -42,10 +42,7 @@ export class AppComponent {
   }
 
   deleteCustomer(customerId: number) {
-    this.service.deleteCustomer(customerId).subscribe(item => {
-      this.loadData()
-    },
-    erro => {
+    this.service.deleteCustomer(customerId).subscribe(() => {
       this.loadData()
     })
   }

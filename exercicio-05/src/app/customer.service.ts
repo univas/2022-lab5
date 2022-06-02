@@ -24,9 +24,14 @@ export class CustomerService {
     return this.httpClient.put<Customer>(this.serverApi + customer.id, customer)
   }
 
-  deleteCustomer(customerId: number) : Observable<Customer> {
-    //TODO review this method. 
-    // Actually the method is returning text instead a JSON
-    return this.httpClient.delete<Customer>(this.serverApi + customerId)
+  deleteCustomer(customerId: number) : Observable<any> {
+    return this.httpClient.delete(this.serverApi + customerId, {
+      headers: undefined,
+      context: undefined,
+      observe: undefined,
+      params: undefined,
+      reportProgress: undefined,
+      responseType: 'text'
+    })
   }
 }
