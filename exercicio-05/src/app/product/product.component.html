@@ -1,1 +1,42 @@
-<p>product works!</p>
+<h1>Products</h1>
+
+<form #myForm="ngForm" (submit)="saveData(myForm)">
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="nome" [(ngModel)]="newProduct.nome">
+  </div>
+  <div>
+    <label>Valor:</label>
+    <input type="text" name="valor" [(ngModel)]="newProduct.valor">
+  </div>
+  <div>
+    <label>Quantidade:</label>
+    <input type="text" name="quantidade" [(ngModel)]="newProduct.quantidade">
+  </div>
+  <input type="submit" value="Salvar">
+</form>
+
+<h2>Product List</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Valor</th>
+      <th>Quantidade</th>
+      <th>Update</th>
+      <th>Apagar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList">
+      <td>{{ product.nome }}</td>
+      <td>{{ product.valor }}</td>
+      <td>{{ product.quantidade }}</td>
+      <td><input type="button" value="Atualizar" 
+        (click)="updateProduct(product)"></td>
+      <td><input type="button" value="Remover" 
+        (click)="deleteProduct(product.id)"></td>
+    </tr>
+  </tbody>
+</table>
